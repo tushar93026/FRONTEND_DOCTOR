@@ -24,7 +24,7 @@ const MyAppointments = () => {
 
     try {
 
-      const {data} = await axios.get(backendUrl + '/api/user/appointments', {headers: {token}})
+      const {data} = await axios.get(backendUrl + 'user/appointments', {headers: {token}})
 
       if(data.success){
         setAppointments(data.appointments.reverse())
@@ -40,7 +40,7 @@ const MyAppointments = () => {
 
     try {
 
-      const {data} = await axios.post(backendUrl + '/api/user/cancel-appointment', {appointmentId}, {headers: {token}})
+      const {data} = await axios.post(backendUrl + 'user/cancel-appointment', {appointmentId}, {headers: {token}})
 
       if(data.success){
         toast.success(data.message)
@@ -71,7 +71,7 @@ const MyAppointments = () => {
 
         try {
 
-          const {data} = await axios.post(backendUrl + '/api/user/verifyRazorpay', response, {headers: {token}})
+          const {data} = await axios.post(backendUrl + 'user/verifyRazorpay', response, {headers: {token}})
           if(data.success){
             getUserAppointments()
             navigate('/my-appointments')
@@ -94,7 +94,7 @@ const MyAppointments = () => {
 
     try {
 
-      const {data} = await axios.post(backendUrl + '/api/user/payment-razorpay', {appointmentId}, {headers: {token}})
+      const {data} = await axios.post(backendUrl + 'user/payment-razorpay', {appointmentId}, {headers: {token}})
       if(data.success){
         initPay(data.order)
       }
