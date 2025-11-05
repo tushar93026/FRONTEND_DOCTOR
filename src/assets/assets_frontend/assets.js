@@ -90,7 +90,7 @@ export const doctors = [
   _id: 'doc1',
   name: 'Nitin Tomar',
   image: doc1,
-  speciality: 'Surgical Oncologist',
+  speciality: 'General physician',
   degree: 'MBBS, Mch, MD, MS',
   experience: '18+ Years',
   about: `
